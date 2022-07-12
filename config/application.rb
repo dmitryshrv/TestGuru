@@ -16,7 +16,7 @@ module Testguru
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
-    config.time_zone = "samara"
+    config.time_zone = "Moscow"
     # config.eager_load_paths << Rails.root.join("extras")
     I18n.default_locale = :en
   end
