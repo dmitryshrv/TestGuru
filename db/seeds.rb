@@ -5,28 +5,24 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Category.create([
-  {title:'front'},
-  {title:'back'}
-])
+front_category = Category.create(title:'front')
+back_category = (title:'back')
 
-Test.create([
-{title:'Ruby on Rails', level: 1, category_id:2},
-{title:'Node.js', level: 2, category_id:2},
-{title:'Go in practice', level: 1, category_id:2},
-{title:'React native', level: 3, category_id:1},
-{title:'CSS Grid', level: 2, category_id:1}
-])
 
-User.create([
-  {name: 'Ivan', email: 'ivan@mail.ru'},
-  {name: 'John', email: 'connor@gmail.com'}
-])
+ruby_test = Test.create(title:'Ruby on Rails', level: 1, category_id: back_category.id)
+nodejs_test = Test.create(title:'Node.js', level: 2, category_id: back_category.id)
+go_test = Test.create(title:'Go in practice', level: 1, category_id: back_category.id)
+react_test = Test.create(title:'React native', level: 3, category_id: front_category.id)
+css_test = Test.create(title:'CSS Grid', level: 2, category_id: front_category.id)
+
+
+ivan = User.create(name: 'Ivan', email: 'ivan@mail.ru')
+john = User.create(name: 'John', email: 'connor@gmail.com')
 
 UserTest.create([
-  {user_id:1, test_id: 1},
-  {user_id:1, test_id: 2},
-  {user_id:1, test_id: 3},
-  {user_id:2, test_id: 1},
-  {user_id:2, test_id: 4}
+  {user_id: ivan.id, test_id: ruby_test.id},
+  {user_id: ivan.id, test_id: nodejs_test.id},
+  {user_id: ivan.id, test_id: go_test.id},
+  {user_id: john.id, test_id: ruby_test.id},
+  {user_id: john.id, test_id: react_test.id}
 ])
