@@ -1,4 +1,12 @@
 class Test < ApplicationRecord
+
+  belongs_to :category
+  has_many :questions
+  has_many :user_tests
+  has_many :users, through: :user_tests
+  has_one :author, class_name: 'User'
+
+
   def self.titles_on_category(category)
     Test
       .joins("INNER JOIN categories ON tests.category_id = categories.id")
