@@ -1,4 +1,7 @@
 class Test < ApplicationRecord
+  validates :title, :level, presence: true
+  validates :level, numericality: { only_integer: true, greater_than: 0 }
+  validates :title, uniqueness: { scope: :level }
 
   belongs_to :category
   has_many :questions
@@ -6,12 +9,10 @@ class Test < ApplicationRecord
   has_many :users, through: :user_tests
   belongs_to :author, class_name: 'User'
 
+  scope :easy, ->{ where(level:1) }
+  scope :middle, ->{ where(level:2..4) }
+  scope :hard, ->{ where(level:5..Float::INFINITY) }
 
-  def self.titles_on_category(category)
-    Test
-      .joins("INNER JOIN categories ON tests.category_id = categories.id")
-      .where('categories.title = ?',category)
-      .order(title: :desc)
-      .pluck(:title)
-  end
+  scope :titles_on_category, ->(category) {
+    categories.where(title: category).order(title: :desc).pluck[:title]}
 end
