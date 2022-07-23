@@ -1,0 +1,10 @@
+<h1>All Tests</h1>
+<% @all_tests.each do |test| %>
+<ul>
+<li>
+<a href ="/tests/<%= test.id%>/questions"><%= test.title %></a>
+</li>
+</ul>
+<%end%>
+
+
