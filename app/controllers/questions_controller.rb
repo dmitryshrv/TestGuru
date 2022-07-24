@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
 
   before_action :find_test, only: %i[index create]
+  before_action :find_question, only: %i[show destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_question_not_found
 
   def index
@@ -8,19 +9,23 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @question = Question.find(params[:id])
+    @question
   end
 
   def new
   end
 
   def create
-    question = Question.create!(body: question_params[:body], test_id: @test.id)
-    render plain: "New questions created" unless question.nil?
+    new_question = @test.questions.new(body: question_params[:body])
+    if new_question.save
+      render plain: "New questions created"
+    else
+      render plain: "Failed to create new question"
+    end
   end
 
   def destroy
-    Question.find(params[:id]).destroy
+    @question.destroy
     render plain: 'Questions deleted'
   end
 
@@ -28,6 +33,10 @@ class QuestionsController < ApplicationController
 
   def find_test
     @test = Test.find_by(id: params[:test_id])
+  end
+
+  def find_question
+    @question = Question.find(params[:id])
   end
 
   def rescue_question_not_found
