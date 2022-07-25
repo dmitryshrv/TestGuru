@@ -1,7 +1,7 @@
 <h1>All questions</h2>
 <% @questions.each do |q|%>
 <p><%= q.body%>
-<a href="<%= test_questions_path %>/<%= q.id %>">show</a>
+<a href="<%= question_path(q) %>">show</a>
 
 </p>
 <%end%>

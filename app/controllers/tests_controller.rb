@@ -4,6 +4,6 @@ class TestsController < ApplicationController
   end
 
   def show
-    #render html: Test.first
+
   end
 end

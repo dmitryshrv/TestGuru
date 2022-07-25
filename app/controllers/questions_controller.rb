@@ -18,7 +18,7 @@ class QuestionsController < ApplicationController
   def create
     new_question = @test.questions.new(body: question_params[:body])
     if new_question.save
-      render plain: "New questions created"
+      redirect_to test_questions_path
     else
       render plain: "Failed to create new question"
     end
