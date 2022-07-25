@@ -1,0 +1,4 @@
+<h1>Вопрос</h1>
+<p><%= @question.body %></p>
+
+<%= link_to "Delete Question", question_path(@question.id) , method: :delete %>

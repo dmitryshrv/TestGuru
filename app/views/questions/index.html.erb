@@ -1,0 +1,10 @@
+<h1>All questions</h2>
+<% @questions.each do |q|%>
+<p><%= q.body%>
+<a href="<%= question_path(q) %>">show</a>
+
+</p>
+<%end%>
+
+<%= link_to "Create new question", new_test_question_path %>
+
