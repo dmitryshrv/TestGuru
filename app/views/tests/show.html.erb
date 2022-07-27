@@ -1,15 +1,22 @@
-<p><%= @test.title %></p></br>
 <p>
-  <%= link_to 'New question', new_test_question_path(@test) %>
+  <strong> Title:</strong>
+  <%= @test.title %>
 </p>
-<p>Questions:</p></br>
 
+<p>
+  <strong> Level:</strong>
+  <%= @test.level %>
+</p>
 <table>
   <tr>
-    <th>Title</th>
-    <th colspan="3">Actions</th>
-  </tr>
-    <%= render @test.questions %>
+    <th>Question</th>
+    <th colspan='3'>Actions</th>
+  <tr/>
+
+  <%= render @test.questions %>
 </table>
 
-<%= link_to 'Back to tests', tests_path %>
+
+<p><%= link_to 'New question', new_test_question_path(@test) %></p>
+<p><%= link_to 'Edit test', edit_test_path(@test) %></p>
+<p><%= link_to 'Back to tests', tests_path %></p>
