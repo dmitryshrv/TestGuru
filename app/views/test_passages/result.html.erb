@@ -1,0 +1,19 @@
+<h1><%= @test_passage.test.title %> test completed</h1>
+
+<% if @test_passage.success? %>
+  <p>
+    Good work, you've got
+    <b style="color:green"><%= @test_passage.grade %>% </b>
+    correct answers
+  </p>
+<% else %>
+    <p>
+    You can make it better, try again!<br>
+    You've got
+    <b style="color:red"><%= @test_passage.grade %>% </b>
+    correct answers
+  </p>
+<% end %>
+
+<%= link_to 'Try again', start_test_path(@test_passage.test), method: :post %> |
+<%= link_to 'All tests', tests_path %>
