@@ -35,7 +35,7 @@ class TestPassage < ApplicationRecord
     self.grade >= SUCCESS_GRADE
   end
 
-  def q_number
+  def question_number
     self.test.questions.where("id <= ?", self.current_question.id).count
   end
 
@@ -43,7 +43,6 @@ class TestPassage < ApplicationRecord
 
   def before_validation_set_first_question
     self.current_question = test.questions.first if test.present?
-    self.q_number = 1
   end
 
   def correct_answer?(answer_ids)
@@ -58,7 +57,7 @@ class TestPassage < ApplicationRecord
 
   def next_question
     self.current_question =
-    test.questions.order(:id).where('id > ?', current_question.id).first
+      test.questions.order(:id).where('id > ?', current_question.id).first
   end
 
 end
