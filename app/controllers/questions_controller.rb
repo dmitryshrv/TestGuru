@@ -1,5 +1,4 @@
 class QuestionsController < ApplicationController
-
   before_action :find_test, only: %i[index new show create destroy]
   before_action :find_question, only: %i[show update edit destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_question_not_found
