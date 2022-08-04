@@ -1,4 +1,7 @@
 class SessionsController < ApplicationController
+
+  skip_before_action :authenticate_user!
+
   def new
   end
 
@@ -7,7 +10,7 @@ class SessionsController < ApplicationController
 
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to cookies[:path] || root_path
+      redirect_to cookies[:forward_path] || root_path
     else
       flash.now[:alert] = 'Please enter your email and password'
       render :new

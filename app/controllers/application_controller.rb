@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
 
+  before_action :authenticate_user!
   helper_method :current_user,
                 :logged_in?
 
@@ -8,7 +9,7 @@ class ApplicationController < ActionController::Base
   def authenticate_user!
     unless current_user
       redirect_to login_path, alert: 'Please verify your email and password'
-      cookies[:path] = request.path
+      cookies[:forward_path] = request.path
     end
   end
 

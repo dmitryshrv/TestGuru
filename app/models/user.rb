@@ -9,7 +9,7 @@ class User < ApplicationRecord
   EMAIL_FORMAT = /[A-Z0-9._%+-]+@([A-Z0-9][-A-z0-9]+\.)+[A-z]{2,4}/i
 
   validates :email, presence: true, uniqueness: true
-  validates_format_of :email, with: EMAIL_FORMAT
+  validates :email, format: {with: EMAIL_FORMAT, message: 'invalid email format'}
   validates :username, presence: true
 
   has_secure_password
