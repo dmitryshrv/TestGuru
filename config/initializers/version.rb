@@ -1,5 +1,5 @@
 module TestGuru
   def current_version
-    '0.8.1'
+    '0.9.2'
   end
 end
