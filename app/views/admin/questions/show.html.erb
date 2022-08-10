@@ -1,0 +1,14 @@
+<h1>Вопрос</h1>
+<p><%= @question.body %></p>
+
+<h2>Answers</h2>
+<%= link_to 'New Answer', new_admin_question_answer_path(@question) %>
+<ol>
+<%= render @question.answers %>
+</ol>
+
+<p><%= link_to 'Edit', edit_admin_question_path(@question) %></p>
+<p><%= link_to 'Delete', admin_question_path(@question), method: :delete, data: { confirm: 'R U sure?' } %></p>
+<p><%= link_to 'Back to Test', admin_test_path(@question.test) %></p>
+
+
