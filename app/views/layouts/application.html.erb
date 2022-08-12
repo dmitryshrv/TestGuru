@@ -13,9 +13,7 @@
   <body>
     <%= render 'layouts/header' %>
 
-    <% if logged_in? %>
-      <p class="nav user">Welcom,<b><%= current_user.name %> Guru</b></p>
-    <% end %>
+    <%= render 'shared/flash' %>
 
     <%= yield %>
 
