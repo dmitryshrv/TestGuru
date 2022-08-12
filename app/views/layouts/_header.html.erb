@@ -2,12 +2,12 @@
   <h1><%= link_to 'TestGuru', root_path %></h1>
 
  <% if user_signed_in? %>
-      <p class="nav user">Welcom,<b><%= current_user.name %> Guru |</b>
-      <%= link_to 'logout', destroy_user_session_path, method: :delete %>
+      <p class="nav user"><%= t('.welcome') %> <%= current_user.name %>|</b>
+      <%= link_to t('.logout'), destroy_user_session_path, method: :delete %>
       </p>
   <% else %>
-    <%= link_to 'Register', new_user_registration_path %> |
-    <%= link_to 'Login', new_user_session_path %>
+    <%= link_to t('.register'), new_user_registration_path %> |
+    <%= link_to t('.login'), new_user_session_path %>
   <% end %>
 </header>
 <hr/>
