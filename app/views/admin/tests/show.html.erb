@@ -1,4 +1,5 @@
-<p>
+<div class="container">
+<p class="mt-4">
   <strong><%= t('.title') %>:</strong>
   <%= @test.title %>
 </p>
@@ -7,7 +8,7 @@
   <strong><%= t('.level') %>:</strong>
   <%= @test.level %>
 </p>
-<table>
+<table class="table">
   <tr>
     <th><%= t('.question') %></th>
     <th colspan='3'><%= t('.action') %></th>
@@ -19,4 +20,5 @@
 
 <p><%= link_to t('.link.new'), new_admin_test_question_path(@test) %></p>
 <p><%= link_to t('.link.edit'), edit_admin_test_path(@test) %></p>
-<p><%= link_to t('.link.back'), admin_tests_path %></p>
+<p><%= link_to t('.link.back'), admin_tests_path, class:"btn btn-primary" %></p>
+</div>
