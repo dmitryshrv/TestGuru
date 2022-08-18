@@ -1,19 +1,12 @@
-<h1><%= @test_passage.test.title %> test completed</h1>
+<h1><%= t('.header', title: @test_passage.test.title) %></h1>
 
 <% if @test_passage.success? %>
   <p>
-    Good work, you've got
-    <b style="color:green"><%= @test_passage.grade %>% </b>
-    correct answers
+    <%= t('.success', grade: @test_passage.grade) %>
   </p>
 <% else %>
-    <p>
-    You can make it better, try again!<br>
-    You've got
-    <b style="color:red"><%= @test_passage.grade %>% </b>
-    correct answers
-  </p>
+    <p><%= t('.fail', grade: @test_passage.grade) %></p>
 <% end %>
 
-<%= link_to 'Try again', start_test_path(@test_passage.test), method: :post %> |
-<%= link_to 'All tests', tests_path %>
+<%= link_to t('.try_again'), start_test_path(@test_passage.test), method: :post %> |
+<%= link_to t('.all_tests'), tests_path %>

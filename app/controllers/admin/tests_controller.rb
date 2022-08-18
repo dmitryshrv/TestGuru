@@ -23,7 +23,7 @@ class Admin::TestsController < Admin::BaseController
     @test = current_user.created_tests.new(test_params)
 
     if @test.save
-      flash[:success] = 'Test successfully created!'
+      flash[:success] = t('.success')
       redirect_to admin_tests_path
     else
       render :new
@@ -32,7 +32,7 @@ class Admin::TestsController < Admin::BaseController
 
   def update
     if @test.update(test_params)
-      flash[:success] = 'Test successfully updated!'
+      flash[:success] = t('.update')
       redirect_to admin_tests_path
     else
       render :edit
@@ -41,7 +41,7 @@ class Admin::TestsController < Admin::BaseController
 
   def destroy
     @test.destroy
-    flash[:success] = 'Test successfully deleted!'
+    flash[:success] = t('.delete')
     redirect_to admin_tests_path
   end
 
