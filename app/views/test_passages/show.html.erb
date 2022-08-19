@@ -14,5 +14,6 @@
       <%= b.label %>
     </p>
   <% end %>
+  <p><%= link_to 'Сохранить вопрос в gist', gist_test_passage_path(@test_passage), method: :post, class: "btn btn-primary" %></p>
   <p><%= form.submit t('.link.next') %></p>
 <% end %>

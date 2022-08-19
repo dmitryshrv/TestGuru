@@ -1,5 +1,6 @@
 <header>
   <nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
     <h1><%= link_to 'TestGuru', root_path, class: "navbar-brand" %></h1>
 
     <span class="navbar-text">
@@ -12,6 +13,8 @@
         <%= link_to t('.login'), new_user_session_path %>
       <% end %>
     </span>
+    </div>
   </nav>
 </header>
+
 <hr/>

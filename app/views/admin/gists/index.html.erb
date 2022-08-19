@@ -1,0 +1,19 @@
+
+<div class="container mt-3">
+<h1><%= t('.header') %></h1>
+
+<table class="table table-striped mt-4">
+  <thead class="table-dark">
+  <tr>
+    <th><%= t('.user') %></th>
+    <th><%= t('.question') %></th>
+    <th><%= t('.link') %></th>
+  <tr/>
+  </thead>
+
+  <%= render @gists %>
+
+</table>
+
+<p><%= link_to t('.back'), admin_tests_path, class:"btn btn-primary" %></p>
+</div>
