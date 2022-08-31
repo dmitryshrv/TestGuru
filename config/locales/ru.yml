@@ -60,6 +60,9 @@ ru:
         next: "Следующий"
       header: "Вы проходите тест %{title}"
       progress: "Вопрос %{number} из %{of}"
+    gist:
+      success: "<a href=\"%{url}\" target=\"_blank\">Gist</a> успешно добавлен"
+      failure: "Что-то пошло не так"
 
 
   admin:
@@ -89,6 +92,7 @@ ru:
         level: "Уровень"
         questions: "Вопросы"
         actions: "Действия"
+        gists: "Смотреть gist'ы"
       new:
         header: "Создать новый тест"
         back: "Все тесты"
@@ -125,6 +129,14 @@ ru:
         edit: "Изменить"
         delete: "Удалить"
         back: "Назад"
+
+    gists:
+      index:
+        header: "Все gist'ы"
+        user: "Пользователь"
+        question: "Вопрос"
+        link: "Ссылка на Github"
+        back: "Назад к тестам"
 
   layouts:
     header:
