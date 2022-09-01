@@ -9,6 +9,8 @@ function match() {
   let password = document.querySelector('#user_password')
   let password_confirmation = document.querySelector('#user_password_confirmation')
 
+  if (!password_confirmation.value) {return;}
+
   if (password.value == password_confirmation.value) {
     password.style.border = '2px solid green'
     password_confirmation.style.border = '2px solid green'
