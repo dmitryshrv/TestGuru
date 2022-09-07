@@ -19,12 +19,14 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 #gem 'bcrypt', '~> 3.1.7'
 gem 'rails-i18n', '~>6.0.0'
+gem 'dotenv-rails', groups: [:development, :test]
 gem 'bootstrap', '~> 5.2.0'
 gem 'jquery-rails'
 gem 'devise', '~> 4.0'
-gem 'dotenv-rails', groups: [:development, :test]
+
 gem 'faraday'
 gem "octokit", "~> 4.0"
+gem 'octicons_helper'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
