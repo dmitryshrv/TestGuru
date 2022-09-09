@@ -84,6 +84,8 @@ ru:
         update: "Тест успешно изменен"
       destroy:
         delete: "Тест успешно удален"
+      form_inline:
+        submit: "ok"
 
       index:
         header: "Доступные тесты"

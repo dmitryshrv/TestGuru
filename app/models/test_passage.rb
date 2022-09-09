@@ -31,6 +31,11 @@ class TestPassage < ApplicationRecord
     (self.correct_qustions.to_f/number_of_questions)*100
   end
 
+  def current_progress
+    current = test.questions.order(:id).index(current_question)
+    (current.to_f / test.questions.count * 100).round
+  end
+
   def success?
     self.grade >= SUCCESS_GRADE
   end
