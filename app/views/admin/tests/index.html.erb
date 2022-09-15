@@ -1,6 +1,9 @@
 <div class="container mt-3">
 <h1><%= t('.header') %></h1>
 <h3><%= link_to t('.new_test'), new_admin_test_path %></h3>
+
+<%= render 'shared/errors', resource: @test%>
+
 <table class="table">
   <tr>
     <th class="sort-by-title pointer">

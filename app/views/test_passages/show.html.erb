@@ -2,9 +2,20 @@
 
 <h2><%= t('.progress', number: @test_passage.question_number, of: @test_passage.number_of_questions) %> </h2>
 
+<div class="progress mb-3 w-25">
+  <div
+      class="progress-bar bg-success" role="progressbar"
+      style="width: <%= @test_passage.current_progress %>%"
+      aria-valuenow="<%= @test_passage.current_progress %>"
+      aria-valuemin="0" aria-valuemax="100">
+      <%= @test_passage.current_progress %>%
+  </div>
+</div>
+
 <b>
   <%= @test_passage.current_question.body %>
 </b>
+
 
 <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
   <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers,

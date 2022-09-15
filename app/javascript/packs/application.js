@@ -11,6 +11,7 @@ import "@popperjs/core"
 import 'bootstrap'
 import './sorting'
 import './check_password'
+import './form_inline'
 
 
 Rails.start()
