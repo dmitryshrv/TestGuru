@@ -14,6 +14,8 @@ ru:
       test:
         update: "Обновить тест"
         create: "Создать тест"
+      feedback:
+        submit: 'Отправить'
 
     label:
       test:
@@ -31,6 +33,8 @@ ru:
         correct: 'Правильный:'
       question:
         body: 'Вопрос:'
+      feedback:
+        message: 'Сообщение:'
 
     link:
       show: 'Показать'
@@ -47,6 +51,14 @@ ru:
     test:
       button:
         start: "Начать"
+
+  feedback:
+    new:
+      title: "Напишите нам"
+
+  feedbacks:
+    create:
+      success: "Сообщене отправлено"
 
   test_passages:
     result:

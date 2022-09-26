@@ -6,7 +6,7 @@ class FeedbacksController < ApplicationController
   def create
     message = params[:message]
     FeedbackMailer.feedback_send(message, current_user).deliver_now
-    flash[:notice] = 'feedback_send'
+    flash[:notice] = t('.success')
     redirect_to root_path
   end
 
