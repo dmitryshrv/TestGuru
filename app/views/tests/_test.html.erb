@@ -2,9 +2,5 @@
   <td><%= test.title %></td>
   <td><%= test_level(test) %></td>
   <td><%= test.questions.count %></td>
-  <% if test.questions.count > 0 %>
-    <td><%= button_to t('.button.start'), start_test_path(test), class: "btn btn-outline-success" %></td>
-  <% else %>
-    <td> Тест в разработке </td>
-  <% end %>
+  <td><%= button_to t('.button.start'), start_test_path(test), class: "btn btn-outline-success" %></td>
 </tr>

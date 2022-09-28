@@ -22,6 +22,7 @@ ru:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
+
       user:
         login: 'Введите логин:'
         email: 'Введите email:'
@@ -84,6 +85,9 @@ ru:
         level: "Уровень"
         category_id: "Категория"
 
+
+
+
     nav:
       admin_panel: "Админ панель"
       welcome: "Привет Guru"
@@ -94,11 +98,13 @@ ru:
         success: "Тест успешно создан"
       update:
         update: "Тест успешно изменен"
+
       destroy:
         delete: "Тест успешно удален"
       form_inline:
         submit: "ok"
-
+      form:
+        visible: "Видимый?"
       index:
         header: "Доступные тесты"
         new_test: "Создать новый тест"
@@ -107,6 +113,7 @@ ru:
         questions: "Вопросы"
         actions: "Действия"
         gists: "Смотреть gist'ы"
+        visible: "Видимость"
       new:
         header: "Создать новый тест"
         back: "Все тесты"
@@ -115,6 +122,9 @@ ru:
         edit: "изменить"
         delete: "удалить"
         start: "старт"
+        visible: "видимый"
+        hidden: "скрытый"
+
       show:
         title: "название"
         level: "уровень"
@@ -123,7 +133,7 @@ ru:
 
         link:
           new: "Создать вопрос"
-          edit: "Изменить вопрос"
+          edit: "Изменить тест"
           back: "Назад"
 
     questions:

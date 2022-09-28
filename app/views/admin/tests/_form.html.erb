@@ -1,3 +1,4 @@
+<div class="container">
 <%= form_with model: [:admin, @test], local: true do |form| %>
   <%= render 'shared/errors', resource: @test %>
   <p>
@@ -14,5 +15,11 @@
     <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
   </p>
 
+  <p>
+    <%= form.label :visible, t('.visible') %>
+    <%= form.check_box :visible, id: :test_visible %>
+  </p>
+
   <p><%= form.submit %></p>
 <%end%>
+</div>

@@ -5,7 +5,6 @@ class Admin::TestsController < Admin::BaseController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_test_not_found
 
   def index
-
   end
 
   def show
@@ -65,7 +64,7 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def test_params
-    params.require(:test).permit(:title, :level, :category_id)
+    params.require(:test).permit(:title, :level, :category_id, :visible)
   end
 
   def rescue_test_not_found

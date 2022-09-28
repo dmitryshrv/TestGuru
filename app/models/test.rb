@@ -14,6 +14,7 @@ class Test < ApplicationRecord
   scope :hard, ->{ where(level:5..Float::INFINITY) }
 
   scope :test_on_category, ->(category) {categories.where(title: category)}
+  scope :visible, ->{ where(visible: true) }
 
   def test_on_category_ordered(category)
     test_on_category(category).order(title: :desc).pluck[:title]
