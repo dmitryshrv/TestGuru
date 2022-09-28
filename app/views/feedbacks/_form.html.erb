@@ -1,0 +1,8 @@
+<%= form_with url: feedback_path, method: :post do |form|  %>
+<div class="form-floating">
+  <%= form.label :message, t('helpers.label.feedback.message') %>
+  <%= form.text_area :message, rows: 7, cols: 60 %>
+</div>
+
+<p><%= form.submit t('helpers.submit.feedback.submit') %></p>
+<% end %>

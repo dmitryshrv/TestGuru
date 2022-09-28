@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root to: "tests#index"
 
+  resource :feedback, only: %i[new create]
+
   devise_for :users, path_names: {sign_in: :login, sign_out: :logout}
               # controllers: { registrations: 'registrations'}
   #devise_for :users, controllers: { registrations: 'users/registrations' }
