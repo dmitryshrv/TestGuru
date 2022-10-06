@@ -2,6 +2,9 @@
   <nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
     <h1><%= link_to 'TestGuru', root_path, class: "navbar-brand" %></h1>
+    <div>
+      <%= link_to t('.badges'), badges_path, class: "btn btn-warning" %>
+    </div>
 
     <span class="navbar-text">
       <% if user_signed_in? %>

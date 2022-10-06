@@ -42,11 +42,16 @@ ru:
       edit: 'Изменить'
       delete: 'Удалить'
 
+  badges:
+    index:
+      back: "Назад"
+      header: "Мои бэйджи"
   tests:
     index:
       header: "Доступные тесты"
       title: "Название"
       questions: "Вопросов"
+      cat: "Категория"
       actions: "Действие"
       level: "Уровень"
     test:
@@ -85,13 +90,43 @@ ru:
         level: "Уровень"
         category_id: "Категория"
 
-
-
-
     nav:
       admin_panel: "Админ панель"
       welcome: "Привет Guru"
       logout: "Выйти"
+
+    badges:
+      index:
+        header: "Все бэйджи"
+        new_badge_link: "Создать бейдж"
+        badge_title: "Название"
+        image: "Картинка"
+        rule: "Правило - Значение"
+        action: "Действия"
+      badge:
+        show_link: "показать"
+        edit_link: "редактировать"
+        delete_link: "удалить"
+        delete_notice: "Вы точно уверены?"
+      show:
+        header: "Информаци о бэйдже"
+        edit_link: "редактировать"
+        delete_link: "удалить"
+        back: "назад"
+        delete_notice: "Вы точно уверены?"
+      edit:
+        back: "Все бейджи"
+        header: "Редактируем"
+      form:
+        title: "Название бэйджа"
+        img: "путь к картинке"
+        rule: "Правило"
+        rule_value: "Значение правила"
+        save: "Сохранить"
+        prompt: "Выберете правило"
+      new:
+        header: "Создать бэйдж"
+        back: "Список бэйджей"
 
     tests:
       create:
@@ -114,6 +149,9 @@ ru:
         actions: "Действия"
         gists: "Смотреть gist'ы"
         visible: "Видимость"
+        cat: "Категория"
+        badge: "Бэйджи"
+
       new:
         header: "Создать новый тест"
         back: "Все тесты"
@@ -166,6 +204,7 @@ ru:
     header:
       welcome: "Привет Guru"
       register: "Регистрация"
+      badges: "Бэйджи"
       login: "Логин"
       logout: "Выйти"
 

@@ -1,0 +1,14 @@
+<div class="container">
+<h2><%= t('.header') %></h2>
+<p><%= @badge.title %></p>
+<p><%= @badge.rule %> - <%= @badge.rule_value %></p>
+<%= image_tag @badge.img, size: 120 %>
+<div class="mt-4">
+<%= link_to t('.edit_link'), edit_admin_badge_path(@badge), class: "btn btn-outline-primary" %>
+<%= link_to t('.delete_link'), admin_badge_path(@badge),
+            method: :delete,
+            data: { confirm: t('.delete_notice')
+            }, class: "btn btn-outline-danger"  %>
+<%= link_to t('.back'), admin_badges_path, class: "btn btn-outline-info" %>
+</div>
+</div>
