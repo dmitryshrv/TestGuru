@@ -5,8 +5,6 @@ Rails.application.routes.draw do
   resource :feedback, only: %i[new create]
 
   devise_for :users, path_names: {sign_in: :login, sign_out: :logout}
-              # controllers: { registrations: 'registrations'}
-  #devise_for :users, controllers: { registrations: 'users/registrations' }
 
   resources :tests, only: :index do
     member do
@@ -21,14 +19,19 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :badges, only: :index
+
   namespace :admin do
     resources :gists, only: :index
+    resources :badges
+
     resources :tests do
       patch :update_inline, on: :member
       resources :questions, shallow: true, except: :index do
         resources :answers, shallow: true, except: :index
       end
     end
+
   end
 
 end

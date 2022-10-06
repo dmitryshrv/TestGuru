@@ -10,6 +10,8 @@ class TestPassage < ApplicationRecord
 
   SUCCESS_GRADE = 85
 
+  scope :passed, -> { where(passed: true) }
+
   def number_of_questions
     self.test.questions.count
   end
@@ -41,6 +43,10 @@ class TestPassage < ApplicationRecord
 
   def question_number
     self.test.questions.where("id <= ?", self.current_question.id).count
+  end
+
+  def pass
+    update_column(:passed, true) if self.success?
   end
 
   private

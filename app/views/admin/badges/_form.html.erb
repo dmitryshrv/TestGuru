@@ -1,0 +1,36 @@
+<div class="container">
+<%= form_with model: [:admin, @badge], local: true do |form| %>
+  <%= render 'shared/errors', resource: @badge %>
+
+  <div class="form-group">
+  <div class="mb-3 w-25">
+    <%= form.label :title, t(".title") %>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3 w-25">
+    <%= form.label :img, t(".img") %>
+    <%= form.text_field :img, class: 'form-control' %>
+  </div>
+
+  <div class="mb-3 w-25">
+    <%= form.label :rule, t(".rule") %>
+    <%= form.select :rule,
+             options_for_select(
+              Badge.rules.map { |key, value| [key.humanize, Badge.rules.key(value)] }, @badge.rule
+              ),
+            { prompt: t(".promtp") },
+            class: 'form-control' %>
+  </div>
+
+  <div class="mb-3 w-25">
+    <%= form.label :rule_value, t(".rule_value") %>
+    <%= form.text_field :rule_value, class: 'form-control' %>
+  </div>
+  <p>* Уровни сложности: 1 - easy, 2 - middle, 3 - hard</p>
+  <p>* Категории: back, front</p>
+
+  <p><%= form.submit t(".save") %></p>
+  </div>
+<%end%>
+</div>

@@ -1,0 +1,19 @@
+<div class="d-flex flex-row mb-3">
+
+  <% @badges_distinct.each do |badge| %>
+
+    <% if @current_user.badges.include?(badge) %>
+      <div class="card p-1 m-2" style="width: 10rem;">
+        <%= image_tag badge.img, class: "card-img-top" %>
+          <span class="position-absolute top-0 translate-middle badge rounded-pill bg-success">
+            <%= current_user.badges.where(id: badge.id).count %>
+          </span>
+          <b class="card-body"><%= badge.title %></b>
+      </div>
+
+    <% end %>
+  <% end %>
+
+</div>
+
+<%= link_to t(".back"), root_path, class: "btn btn-primary" %>
