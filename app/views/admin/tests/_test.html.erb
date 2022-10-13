@@ -9,6 +9,7 @@
   <td class="align-middle">
     <%= test.visible ? t('.visible') : t('.hidden') %>
   </td>
+  <td class="align-middle"><%= test.deadline %> min </td>
   <td class="align-middle"><%= link_to t('.show'), admin_test_path(test) %></td>
   <td class="align-middle">
     <%= link_to t('.edit'),

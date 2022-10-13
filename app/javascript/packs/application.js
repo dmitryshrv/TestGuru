@@ -12,6 +12,7 @@ import 'bootstrap'
 import './sorting'
 import './check_password'
 import './form_inline'
+import './timer'
 
 
 Rails.start()

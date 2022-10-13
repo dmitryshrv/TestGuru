@@ -140,6 +140,7 @@ ru:
         submit: "ok"
       form:
         visible: "Видимый?"
+        deadline: "Дедлайн (минуты)"
       index:
         header: "Доступные тесты"
         new_test: "Создать новый тест"
@@ -151,6 +152,7 @@ ru:
         visible: "Видимость"
         cat: "Категория"
         badge: "Бэйджи"
+        deadline: "Дедлайн (минуты)"
 
       new:
         header: "Создать новый тест"
@@ -162,6 +164,7 @@ ru:
         start: "старт"
         visible: "видимый"
         hidden: "скрытый"
+        deadline: "Время прохождения в минутах"
 
       show:
         title: "название"

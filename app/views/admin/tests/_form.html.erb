@@ -16,6 +16,12 @@
   </p>
 
   <p>
+    <%= form.label :deadline, t('.deadline') %>
+    <%= form.number_field :deadline %>
+  </p>
+
+
+  <p>
     <%= form.label :visible, t('.visible') %>
     <%= form.check_box :visible, id: :test_visible %>
   </p>
