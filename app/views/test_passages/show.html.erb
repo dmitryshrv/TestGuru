@@ -12,6 +12,8 @@
   </div>
 </div>
 
+<div class="timer" data-time="<%= @test_passage.test.deadline_time - @test_passage.passed_time %>"></div>
+
 <b>
   <%= @test_passage.current_question.body %>
 </b>
@@ -26,5 +28,5 @@
     </p>
   <% end %>
   <p><%= link_to 'Сохранить вопрос в gist', gist_test_passage_path(@test_passage), method: :post, class: "btn btn-primary" %></p>
-  <p><%= form.submit t('.link.next') %></p>
+  <p><%= form.submit t('.link.next'), class:"update-button" %></p>
 <% end %>

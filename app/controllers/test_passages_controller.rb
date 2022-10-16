@@ -12,7 +12,7 @@ class TestPassagesController < ApplicationController
   def update
     @test_passage.accept!(params[:answer_ids])
 
-    if @test_passage.completed?
+    if @test_passage.completed? || time_not_expired?
       TestsMailer.completed_test(@test_passage).deliver_now
       @test_passage.pass
       BadgeService.new(@test_passage).give_badge if @test_passage.success?
@@ -20,6 +20,10 @@ class TestPassagesController < ApplicationController
     else
       render :show
     end
+  end
+
+  def time_not_expired?
+    @test_passage.passed_time < @test_passage.test.deadline
   end
 
   def gist
